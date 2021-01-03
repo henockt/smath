@@ -34,7 +34,7 @@ def api():
 # Renders a page that requests the /api route
 @app.route('/')
 def home():
-    return render_template("home.html", message="{{ message }}") # Fixes jinja2 replacement of message
+    return render_template("home.html", message="{{ message }}") # Fixes jinja2 replacement of message for Vue.js
 
 # Handle 404
 @app.errorhandler(404)
