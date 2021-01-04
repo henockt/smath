@@ -7,6 +7,7 @@ var app = new Vue({
 
 // make API call
 function calc() {
+    app.message = "Evaluating..."
     var expression = encodeURIComponent($("#exp").val());
     fetch(window.location.href + "api?q=" + expression)
       .then(response => response.json())
@@ -15,9 +16,7 @@ function calc() {
 
 // map enter key to calc()
 function handle(e) {
-    if(e.keyCode === 13) {
-        calc();
-        app.message = "Evaluating..."   
-    }
+    if(e.keyCode === 13)
+        calc();   
 }
 
