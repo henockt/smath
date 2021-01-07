@@ -2,17 +2,20 @@ from flask import Flask, jsonify, request, render_template
 import requests
 import urllib.parse as up
 import os
+import random 
 
 app = Flask(__name__)
 
 """ 
-   SET YOUR WOLFRAMID FIRST AS ENV
+   SET YOUR WOLFRAMID FIRST AS ENVIRONMENT VARIABLE
 """
 wolframID = os.getenv("WOLFRAM_ALPHA")
 
 # Check for wolfram id
 if wolframID == None:
-    raise Exception("Wolfram ID not set")
+     raise Exception("Wolfram ID not set")
+
+examples = ["(1 + sqrt 5) / 2", "phi", "is tomato a fruit?", "anything...", "universe"]
 
 # API route
 # Asks api.wolframalpha.com and returns result in JSON format
@@ -34,7 +37,7 @@ def api():
 # Renders a page that requests the /api route
 @app.route('/')
 def home():
-    return render_template("home.html", message="{{ message }}") # Fixes jinja2 replacement of message for Vue.js
+    return render_template("home.html", example=examples[random.randint(0, len(examples) - 1)]) # Fixes jinja2 replacement of message for Vue.js
 
 # Handle 404
 @app.errorhandler(404)

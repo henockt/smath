@@ -13,10 +13,11 @@
         <p>Straightforward math calculator | expression evaluator </p>
     </div>
     <div id="app" class="container text-center mt-5">
-        <input id="exp" type="text" autofocus placeholder="(1 + (sqrt 5)) / 2" onkeypress="handle(event)"/>
-        <button type="button" class="btn btn-primary" onclick="calc()">Evaluate</button>
-        <div id="output" class="container">
-            {{ message }}
+        <div id="input" class="container text-center">
+            <input id="exp" type="text" autofocus placeholder="{{ example }}" onkeypress="handle(event)"/>
+            <button type="button" class="btn btn-primary" onclick="calc()">Evaluate</button>    
+        </div>
+        <div id="output" class="container-fluid">
         </div>
     </div>
     <div class="text-center container mt-10">

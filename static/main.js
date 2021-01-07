@@ -1,9 +1,19 @@
-var app = new Vue({
-    el: "#output",
-    data: {
-      message: "Enter expression"
-    }
-  })
+$(function() {
+    $("#output").html("{{ message }}");
+    initialize();
+});
+
+var app;
+// initialize Vue
+function initialize() {
+    app = new Vue({
+        el: "#output",
+        data: {
+            message: "Enter expression"
+        }
+    })
+}
+
 
 // make API call
 function calc() {

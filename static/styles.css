@@ -1,3 +1,30 @@
+body {
+    background-color: whitesmoke;
+}
+
+html {
+    background-color: whitesmoke;
+}
+
 .mt-10 {
     margin-top: 10rem;
+}
+
+#output {
+    margin-top: 2rem;
+    width: 80% !important;
+}
+
+#exp {
+    padding: 0.8rem;
+    margin-right: 1rem;
+}
+
+button {
+    padding: 0.8rem !important;
+}
+
+#input {
+    display: flex;
+    justify-content: center;
 }
