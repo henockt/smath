@@ -14,7 +14,6 @@ function initialize() {
     })
 }
 
-
 // make API call
 function calc() {
     app.message = "Evaluating..."
@@ -29,4 +28,3 @@ function handle(e) {
     if(e.keyCode === 13)
         calc();   
 }
-
